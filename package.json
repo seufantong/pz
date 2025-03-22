@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "element-plus": "^2.9.7"
+  },
+  "devDependencies": {
+    "unplugin-auto-import": "^19.1.1",
+    "unplugin-vue-components": "^28.4.1"
+  },
+  "name": "pz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
