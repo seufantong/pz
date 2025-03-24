@@ -18,6 +18,7 @@ export default defineConfig({
   ],
   
   server: {
-    allow: ['element-plus/theme-chalk'] // 允许访问 Element Plus 的主题目录
+    allow: ['element-plus/theme-chalk'] 
+    // 允许访问 Element Plus 的主题目录
   }
 })

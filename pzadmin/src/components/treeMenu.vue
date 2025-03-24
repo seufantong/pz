@@ -35,12 +35,14 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
+import { useMenuStore } from '../stores/menuStore';
+
+const menuStore = useMenuStore();
 const props = defineProps(["index", "menuData"]);
 const router =useRouter()
 const handleClick = (item, active) => {
-  // store.commit("addMenu", item.meta);
-  // store.commit("updateMenuActive", active);
-
+  menuStore.addMenu(item.meta);
+  //menuStore.updateMenuActive(active);
   router.push(item.meta.path)
 };
 </script>
