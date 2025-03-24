@@ -22,11 +22,12 @@ import { useMenuStore } from '../stores/menuStore';
 import treeMenu from './treeMenu.vue';
 
 const router = useRouter();
-const menuData = reactive(router.options.routes[0].children);
-console.log(menuData);
+
+
 
 const menuStore = useMenuStore();
 const isCollapse = computed(() => menuStore.isCollapse);
+const menuData = computed(() => menuStore.routerList)
 
 const handleOpen = () => { };
 const handleClose = () => { };

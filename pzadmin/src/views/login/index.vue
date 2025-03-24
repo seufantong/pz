@@ -88,7 +88,8 @@ const rules = reactive({
 // 提交表单
 const loginFormRef = ref();
 const router = useRouter();
-const menuStore = useMenuStore(); // 获取 Pinia Store 实例
+const menuStore = useMenuStore(); 
+
 
 const submitForm = (formEl) => {
   formEl.validate((valid) => {
@@ -98,13 +99,13 @@ const submitForm = (formEl) => {
           if (data.code === 10000) {
             localStorage.setItem('token', data.data.token);
             localStorage.setItem('userInfo', JSON.stringify(data.data.userInfo));
-            
-            // 调用 Pinia Action
+        
             menuPermissions().then(({ data: permission }) => {
-              menuStore.dynamicMenu(permission.data); // 替换原 store.commit
-              const routerList = toRaw(menuStore.routerList); // 访问 Pinia State
+              menuStore.dynamicMenu(permission.data); // 调用 Pinia Action
+              const routerList = menuStore.routerList; //
+              //console.log(routerList);
               routerList.forEach(item => {
-                router.addRoute("main", item);
+                router.addRoute('main', item)
               });
             }).then(() => {
               router.push('/');
